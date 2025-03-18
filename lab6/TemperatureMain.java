@@ -1,29 +1,3 @@
-/* Create  a abstract  Base Class    Temperature 
-Data members: 
-double temp; 
-Method members: 
-void setTempData(double) 
-abstact void changeTemp() 
- 
-Sub Class Fahrenheit      (subclass of Temperature) 
-Data members: 
-double ctemp; 
-method member: 
-Override abstract method  changeTemp() to convert 
-Fahrenheit temperature into degree Celsius by using 
-formula C=5/9*(F-32) and display converted 
-temperature 
- 
-
-Sub Class Celsius                  (subclass of 
-Temperature) 
-Data member: 
-double  ftemp; 
-Method member: 
-Override abstract method changeTemp() to convert 
-degree Celsius into Fahrenheit temperature  by using  
-formula F=9/5*c+32 and display converted temperature
-  */
 
 import java.util.Scanner;
 
@@ -47,7 +21,8 @@ class Fahrenheit extends Temperature
     }
     public void showTemperature()
     {
-        System.out.println("Temperture = "+ctemp+" Degree Celsius");
+        String formattedValue1 = String.format("%.2f", ctemp);
+        System.out.println("Temperture = "+formattedValue1+" Degree Celsius");
     }
 }
 
@@ -60,7 +35,8 @@ class Celsius extends Temperature
     }
     public void showTemperature()
     {
-        System.out.println("Temperature = "+ftemp+" Degree Fahrenheit");
+        String formattedValue1 = String.format("%.2f", ftemp);
+        System.out.println("Temperture = "+formattedValue1+" Degree Celsius");
     }
 }
 
@@ -72,7 +48,7 @@ public class TemperatureMain
          
 
         int choice=0;
-        System.out.println("Press\n1. Change temperature to degree Fahrenheit \n2. Change temperature to degree Celsuis\n3. EXIT");
+        System.out.println("Press\n1. Change temperature to degree Celsius \n2. Change temperature to degree Fahrenheit\n3. EXIT");
 
         double temp;
         Temperature t;
@@ -119,7 +95,7 @@ public class TemperatureMain
         }
         while(choice!=3);
 
-        System.out.println("EXITING THE PROGRAM....");
+        
 
         sc.close();
 

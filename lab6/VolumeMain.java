@@ -20,7 +20,8 @@ class Cone implements Volume
     }
     public void displayVolume()
     {
-        System.out.println("Volume of Cone = "+this.volume);
+        String formattedValue1 = String.format("%.2f", this.volume);
+        System.out.println("Volume of this Cone : " + formattedValue1);        
     }
 }
 class Cylinder implements Volume
@@ -32,7 +33,8 @@ class Cylinder implements Volume
     }
     public void displayVolume()
     {
-        System.out.println("Volume of Cylinder = "+this.volume);
+        String formattedValue1 = String.format("%.2f", this.volume);
+        System.out.println("Volume of this cylinder : " + formattedValue1);
     }
 }
 class Hemisphere implements Volume
@@ -44,7 +46,8 @@ class Hemisphere implements Volume
     }
     public void displayVolume()
     {
-        System.out.println("Volume of Hemisphere = "+this.volume);
+        String formattedValue1 = String.format("%.2f", this.volume);
+        System.out.println("Volume of this hemisphere : " + formattedValue1);
     }
 }
 

@@ -1,19 +1,3 @@
-package lab6;
-/* Write a java program to calculate the area of a 
-rectangle, a square and a circle. Create an abstract 
-class 'Shape' with three abstract methods namely 
-rectangleArea() taking two parameters, squareArea() 
-and circleArea() taking one parameter each.  
-Now create another class ‘Area’ containing all the 
-three methods rectangleArea(),squareArea() and 
-circleArea() for printing the area of rectangle, square 
-and circle respectively. Create an object of class Area 
-and call all the three methods.  
- 
-(Use Runtime Polymorphism)
-
-*/
-
 import java.util.Scanner;
 
 abstract class Shape
