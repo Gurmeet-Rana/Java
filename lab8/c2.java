@@ -1,5 +1,5 @@
 package p1;
-import p1.p2.c1;
+import static p1.p2.c1.*;
 import java.util.Scanner;
 public class c2 {
     public static void main(String []args)
@@ -10,7 +10,7 @@ public class c2 {
         a=sc.nextInt();
         b=sc.nextInt();
 
-        c1 obj=new c1();
+      //  c1 obj=new c1();
 
         while (true) {
             int choice;
@@ -18,17 +18,17 @@ public class c2 {
             choice=sc.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println(("Addition : "+obj.sum(a,b)));
+                    System.out.println(("Addition : "+sum(a,b)));
                     break;
 
                 case 2:
-                    System.out.print("SUBTRACTION : "+obj.sub(a, b));    
+                    System.out.print("SUBTRACTION : "+sub(a, b));    
                     break;
                 case 3:
-                    System.out.println("MULTIPLICATION : "+obj.mul(a, b));
+                    System.out.println("MULTIPLICATION : "+mul(a, b));
                     break;
                 case 4: 
-                    System.out.println("DIVISION : "+obj.div(a, b));
+                    System.out.println("DIVISION : "+div(a, b));
                     break;
                 case 5 : return ;        
 
