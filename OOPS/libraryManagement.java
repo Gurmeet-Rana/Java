@@ -27,7 +27,7 @@ interface LibraryOperations {
 class Library implements LibraryOperations
 {
     public String name,address;
-    public Book[]arr;
+    public Book[] arr;
     static int i;
     static{
         i=0;
@@ -38,20 +38,22 @@ class Library implements LibraryOperations
         this.name=name;
         this.address=add;
         arr=new Book[100];
-        
+        for(int j=0;j<100;j++) arr[j]=null;        
     }
     
     public void addBook(Book b)
     {
-        this.arr[i]=b;
+        
+        arr[i]=new Book(b.author,b.title,b.isbn);
         i++;
     }
     public void listBooks()
     {
         System.out.println("ALL BOOKS AVAILABLE IN THE LIBRARY : ");
-        for(int j=0;j<=i;j++)
+        for(int j=0;j<i;j++)
         {
-            this.arr[i].displayBookInfo();
+            if(arr[j]==null) continue;
+            arr[j].displayBookInfo();
         }
     }
 
@@ -59,7 +61,8 @@ class Library implements LibraryOperations
     {
         for(int j=0;j<=i;j++)
         {
-            if(this.arr[j].author==author && this.arr[j].title==title)
+            if(arr[j]==null) continue;
+            if(arr[j].author.equals(author) && arr[j].title.equals(title) )
             {
                 System.out.println("Bool is available in library . Details : ");
                 arr[j].displayBookInfo();
@@ -74,8 +77,7 @@ class myLibrary extends Library{
 
     public myLibrary(String name,String add)
     {
-        super(name,add);   
-               
+        super(name,add);              
         
     }
     
@@ -102,6 +104,7 @@ public class libraryManagement {
                     b.author=sc.nextLine();
                     System.out.println("Enter the ISBN of the book : ");
                     b.isbn=sc.nextInt();
+
                     l.addBook(b);
                     break;
                 case 2: 

@@ -50,6 +50,7 @@ public class q16 {
         q16 obj=null;
         do
         {
+            System.out.println("Enter your choice : ");
             choice=sc.nextInt();
             sc.nextLine();           
             switch (choice) {
@@ -77,7 +78,7 @@ public class q16 {
                             EmployeeException e = new EmployeeException("Name's first character is not Capital !");
                             throw e;
                         }
-                        if(eId<2001 && eId>5001)
+                        if(eId<2001 || eId>5001)
                         {
                             EmployeeException e=new EmployeeException("Employee is not in range [2001,5001]!! ");
                             throw e;
@@ -96,7 +97,7 @@ public class q16 {
                     }
                     catch(EmployeeException e)
                     {
-                        System.out.println(e.getMessage());
+                        System.out.println("ERROR : "+e.getMessage());
                     }                    
 
                     break;
@@ -108,6 +109,10 @@ public class q16 {
                             EmployeeException e = new EmployeeException("Employee doesn't exists!");
                             throw e;
                         }
+                        else
+                        {
+                            obj.showDetails(); 
+                        }
                         
                     }
                     catch(EmployeeException e)
@@ -115,7 +120,7 @@ public class q16 {
                         System.out.println(e);
                     }
                     
-                    obj.showDetails();                    
+                                       
 
                     break;
                 
@@ -123,6 +128,8 @@ public class q16 {
                     break;
             }
         } while(choice<3);
+
+        System.out.println("REST OF THE CODE.....");
     }
 
 }
