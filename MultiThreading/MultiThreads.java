@@ -13,7 +13,7 @@ class ABC extends Thread
 {
     public void run()
     {
-        for(int i=0;i<5;i++)
+        for(int i=0;true;i++)
         {
             try
             {
@@ -23,7 +23,25 @@ class ABC extends Thread
             {
                 System.out.println(e.getMessage());
             }
-            System.out.println(this.getName()+" THREAD "+i);
+            System.out.println(this.getName()+" THREAD i = "+i);
+        }
+    }
+}
+class XYZ extends Thread
+{
+    public void run()
+    {
+        for(int j=0;true;j++)
+        {
+            try
+            {
+                this.sleep(500);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            System.out.println(this.getName()+" THREAD j= "+j);
         }
     }
 }
@@ -33,16 +51,15 @@ public class MultiThreads {
     public static void main(String []args)
     {
         ABC CSthread = new ABC();
-        ABC ITthread = new ABC();
+        XYZ ITthread = new XYZ();
         
         CSthread.setName("CSthread");
         ITthread.setName("ITthread");
 
-        CSthread.start();
-     
+        CSthread.start();   
        
         
-        try
+        /* try
         {
             CSthread.join();
            // ITthread.join();            
@@ -50,16 +67,16 @@ public class MultiThreads {
         catch(InterruptedException e)
         {
             System.out.println(e.getMessage());
-        }
+        } */
 
         ITthread.start();
-        try{
+        /* try{
             ITthread.join();
         }
         catch(InterruptedException e)
         {
             System.out.println(e.getMessage());
-        }
+        } */
 
         System.out.println("THIS IS THE REST OF THE CODE !! ");
 

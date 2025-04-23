@@ -13,5 +13,3 @@ public class readFromFile {
         System.out.println("FILE HAS BEEN READ");
     }
 }
-
-many problems for which a greedy approach provides optimal solutions 

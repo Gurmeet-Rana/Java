@@ -93,7 +93,7 @@ public class question10 {
     {
         Scanner sc=new Scanner(System.in);
         String str=new String();
-        System.out.println("Enter the stirng : ");
+        System.out.println("Enter the string : ");
         str=sc.nextLine();
         question10 q=new question10(str);
 

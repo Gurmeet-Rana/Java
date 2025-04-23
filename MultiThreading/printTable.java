@@ -12,7 +12,7 @@ class Table
 
 class A extends Thread
 {
-    Table t;
+    Table t;  //THIS IS CALLED AGGREGATION
     public A(Table t)
     {
         this.t=t;

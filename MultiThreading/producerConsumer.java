@@ -6,9 +6,8 @@ the next value. */
 class ABC extends Thread
 {
     public void run()
-    {
-        
-        
+    {   
+    
         for(int value=1;value<=5;value++)
         {
             if(this.getName()=="Producer")
@@ -16,9 +15,9 @@ class ABC extends Thread
                 System.out.println("Producer is producing a value !!");
             }
             else
-        {
-            System.out.println("Consumer is consuming a value !!");
-        }
+            {
+                System.out.println("Consumer is consuming a value !!");
+            }
             System.out.println("Value = "+value);
         }
     }
