@@ -2,30 +2,50 @@
 an  ArrayList of Strings as a parameter and that 
 removes all of the strings of even length from the list. 
 (Use ArrayList) */
-import java.util.ArrayList;
-import java.util.Scanner;
-public class arrayList {
-    public static void main(String args[])
+
+import java.util.*;
+public class arrayList
+{
+    public void removeEvenString(ArrayList list,int n)
     {
-        int n;
+        for(int i=0;i<list.size();i++)
+        {
+            String curr=list.get(i).toString();
+            if(curr.length()%2==0)
+            {
+                list.remove(i);
+            }
+        }
+    }
+    public static void main(String []args)
+    {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the number of strings you want to enter : ");
-        ArrayList arr=new ArrayList<String>();
+        ArrayList<String> list=new ArrayList<>();
+        int n;
+        System.out.println("Enter the number of strings you want to append in list : ");
         n=sc.nextInt();
         sc.nextLine();
-        while(n>0)
+        for(int i=0;i<n;i++)
         {
+            String str;
             System.out.println("Enter the string : ");
-            String str=sc.nextLine();
-            arr.add(str);
-            n--;
+            str=sc.nextLine();
+            list.add(str);
+        }
+        System.out.println("You Entered : ");
+        for(String s:list)
+        {
+            System.out.println(s);
         }
 
-        System.out.println("The array content is : ");
-        for(int i=0;i<arr.size();i++)
+        System.out.println("REMOVING EVEN LENGTH STRINGS FROM LIST : ");
+        arrayList obj=new arrayList();
+        obj.removeEvenString(list,n);
+        System.out.println("Updated list is : ");
+        for(String s:list)
         {
-            System.out.println(arr);
+            System.out.println(s);
         }
-        
+        System.out.println("End of Program....");
     }
 }

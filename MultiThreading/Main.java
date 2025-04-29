@@ -1,8 +1,6 @@
 /* Write a class Display having void wish(String name) methods that wishes hello to given string name . B/w printing hello and and provided string name apply delay of 500 ms . Suppose multiple threads are there and they are trying to access this wish() method concurrently on same object then irregular output will be there . Write this application in sucha a way that output becomes regular . 
  */
 
-
-
 import java.util.Scanner;
 class Display {
     String name;
@@ -12,7 +10,7 @@ class Display {
     }
     public synchronized void wish()
     {
-        System.out.print("Hello - ");
+        System.out.print(" Hello - ");
         try
         {
             Thread.sleep(500);
@@ -34,6 +32,7 @@ class ABC extends Thread
     }
     public void run()
     {
+        System.out.print("From "+this.getName());
         d.wish();
     }
 }
@@ -45,7 +44,9 @@ class XYZ extends Thread
         this.d=d;
     }
     public void run()
+
     {
+        System.out.print("From "+this.getName());
         d.wish();
     }
 }
@@ -59,6 +60,9 @@ public class Main
         d=new Display("XYZ");
         XYZ t2=new XYZ(d);
 
+        t1.setName("Thread 1");
+
+        t2.setName("Thread 2");
 
         t1.start();
         try
