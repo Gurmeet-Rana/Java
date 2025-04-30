@@ -8,7 +8,12 @@ import java.util.*;
 public class swappingClass {
     public void swapPairs(ArrayList list)
     {
-        
+        if(list.size()<2) return ;
+        int i=1;
+        while(i<list.size())
+        {
+            
+        }
     }
     public static void main(String[]args)
     {

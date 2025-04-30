@@ -2,11 +2,10 @@ import java.util.Scanner;
 
 class myException extends Exception
 {
-    String msg;
+   
     myException(String msg)
     {
-        super(msg);
-        this.msg=msg;
+        super(msg);        
     }
 }
 
@@ -26,54 +25,51 @@ class Utils
     {
         try
         {
-            if(this.balance>amt)
+            if(this.balance<amt)
             {
                 myException e=new myException("NOT ENOUGH BALANCE!!");
                 throw e;                                
+            }
+            else
+            {
+                this.balance-=amt;
+                System.out.println(amt+" has been debited , Remaining amount is : "+this.balance); 
             }
             
         }
         catch(myException e)
         {
-            System.out.println("ERROR IN WITHDRAW : "+e.msg);
+            System.out.println("ERROR IN WITHDRAW : "+e.getMessage());
         }
-        finally
-        {
-            this.balance-=amt;
-            System.out.println(amt+" has been debited , Remaining amount is : "+this.balance);  
-        }
+         
     }
 } 
 
 class credit extends Thread
 {
     Utils obj;
-    credit(Utils u)
+    int amt;
+    credit(Utils u,int amt )
     {
         this.obj=u;
+        this.amt=amt;
     }
     public void run()
-    {
-        int amt;
-        System.out.println("Enter amount to credit : ");
-        Scanner sc=new Scanner(System.in);
-        amt=sc.nextInt();        
+    {        
         obj.credit(amt);
     }
 }
 class debit extends Thread
 {
     Utils obj;
-    debit(Utils u)
+    int amt;
+    debit(Utils u,int amt)
     {
+        this.amt=amt;
         this.obj=u;
     }
     public void run()
-    {
-        int amt;
-        System.out.println("Enter amount to withdraw : ");
-        Scanner sc=new Scanner(System.in);
-        amt=sc.nextInt();   
+    {          
         obj.withdraw(amt);
     }
 }
@@ -87,10 +83,17 @@ public class Bank {
         balance=sc.nextInt();
         sc.nextLine();
 
-        Utils obj=new Utils(balance);
+        Utils obj=new Utils(1000);
 
-        credit t1=new credit(obj);
-        debit t2=new debit(obj);
+        int amt;
+        System.out.println("Enter amount to credit : ");
+        amt=sc.nextInt();
+        sc.nextLine();
+        credit t1=new credit(obj,amt);
+        System.out.println("Enter amount to withdraw : ");
+        amt=sc.nextInt();
+        sc.nextLine();
+        debit t2=new debit(obj,amt);
 
         t1.start();
         t2.start();
