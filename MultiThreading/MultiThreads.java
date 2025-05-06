@@ -77,6 +77,7 @@ public class MultiThreads {
         {
             System.out.println(e.getMessage());
         } */
+       
 
         System.out.println("THIS IS THE REST OF THE CODE !! ");
 
