@@ -10,6 +10,7 @@ public class addEvent extends JFrame implements ActionListener {
         int n1=Integer.parseInt(num1.getText());
         int n2=Integer.parseInt(num2.getText());
         String s=e.getActionCommand();
+        //Object a=e.getSource();
         if(s=="ADD")
         {
             int Sum=n1+n2;
