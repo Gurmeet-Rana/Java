@@ -1,0 +1,9 @@
+JAVA Event Delegation Model ::: 
+    -> Source  :  COMPONENTS ARE SOURCE , For example a button is source . 
+    -> Listener  :  INTERFACES TO HANDLE THE EVENT . THESE ARE HANDLERS . EVERY Listener HAVE CORRESPONDING CLASS 
+        FOR BUTTONS : ActionListener (1 function which is abstract - public void actionPerformed(reference of corresponding class here , ActionEvent e) , class : ActionEvent).
+            for example : public void actionPerformed(ActionEvent e)
+                            {
+
+                            }
+        REGISTRATION OF LISTENERS OVER SOURCE BY REGISTRATION : button.addActionListener(this)
