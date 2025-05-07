@@ -9,9 +9,19 @@ public class addEvent extends JFrame implements ActionListener {
     {
         int n1=Integer.parseInt(num1.getText());
         int n2=Integer.parseInt(num2.getText());
-        int Sum=n1+n2;
-        String n3=Integer.toString(Sum);
-        sum.setText(n3);        
+        String s=e.getActionCommand();
+        if(s=="ADD")
+        {
+            int Sum=n1+n2;
+            String n3=Integer.toString(Sum);
+            sum.setText(n3);      
+        }  
+        else
+        {
+            int sub=n1-n2;
+            String ans=Integer.toString(sub);
+            subtract.setText(ans);
+        }
     } 
 
     public addEvent()
