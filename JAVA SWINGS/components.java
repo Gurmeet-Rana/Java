@@ -4,7 +4,11 @@ public class components extends JFrame {
     public components()
     {
         JLabel JB=new JLabel("Name : ");
-        setLayout(new FlowLayout());
+        FlowLayout fl=new FlowLayout();
+        fl.setHgap(200);
+        fl.setVgap(100);
+         
+        setLayout(fl);
         
         add(JB); 
 
