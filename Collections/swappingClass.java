@@ -6,13 +6,20 @@ order of the next two, and so on */
 
 import java.util.*;
 public class swappingClass {
-    public void swapPairs(ArrayList list)
+    public void swapPairs(ArrayList<Integer> list)
     {
         if(list.size()<2) return ;
-        int i=1;
+        int i=0;
         while(i<list.size())
         {
-            
+            int a=list.get(i);            
+            if(i+1<list.size())
+            {
+                int b=list.get(i+1);
+                list.set(i,b);
+                list.set(i+1,a);
+            }
+            i+=2;
         }
     }
     public static void main(String[]args)
@@ -31,6 +38,8 @@ public class swappingClass {
 
         swappingClass obj=new swappingClass();
         obj.swapPairs(list);
+
+        for(int a:list) System.out.print(a+" ");
 
         System.out.println("REST OF THE CODE...");
     } 
