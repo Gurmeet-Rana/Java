@@ -1,0 +1,39 @@
+Collections and Generic Framework in Java : 
+    -> Collection is a Framework that provides an architecturen to store and manupulate the grp of obj
+    -> Operations : 
+    -> interfaces(Set,List,Q,Deque) and classes(ArrayList,Vector,LL,PQ,HashSet,LinkedHashSet)
+    -> import java.util
+    List(INTERFACE) : implemented by ArrayList,LinkedList,Vector,Stack
+    Q(interfaces) : implemented by PQ , (Deque-interface) , ArrayDeque
+    Set()
+
+ITERATOR : interface provide facility of iterating the ele in a forward dir only .
+    METHODS : 
+        -> public boolean hasNext() - returns true if next ele is there
+        -> public Object next() - returns the next ele and moves the cursor pointer to nxt ele
+        -> public void remove() - Removes last ele  
+
+LIST INTERFACE : 
+    -> child interface of Collection Framework
+    -> CAN HAVE DUPLICATES 
+    -> this interface is implemented by the classes ArrayList,LinkedList,Vector,Stack
+    eg : List <data-type> list1=new ArrayList();
+         List <data-type> list2=new LinkedList();
+         List <data-type> list2=new 
+
+         ARRAYLIST :
+            -> Uses dynamic array to store the duplicate ele of diff dattypes
+            -> can be randomly accessed
+            -> non-synch and maintains the insertion order
+            eg : ArrayList<String> list=new ArrayList<String>();
+                METHODS : 
+                    .add(string)
+                    Iterator<String> itr=list.Iterator()
+                    .set(indx,newString)
+                    .get(indx);
+                    .size();
+                    .remove(indx);
+         LinkedList :
+            eg : LinkedList<Integer> l=new LinkedList<Integer> 
+                    .add()
+                    . 
