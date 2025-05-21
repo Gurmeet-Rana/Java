@@ -39,13 +39,14 @@ public class mergeList {
         Scanner sc=new Scanner(System.in);
         n=sc.nextInt();
         sc.nextLine();
+
         System.out.println("Enter elements in first list : ");
         for(int i=0;i<n;i++)
         {
             l1.add(sc.nextInt());
             sc.nextLine();
         }
-        sc.nextLine();
+       
         System.out.println("Enter the size of second list : ");
         m=sc.nextInt();
         sc.nextLine();
@@ -56,13 +57,14 @@ public class mergeList {
             sc.nextLine();
         }
 
-
         LinkedList<Integer> res=new LinkedList<Integer>();
         mergeList.merge(l1,l2,res);
         System.out.println("First list is : ");
         for(Integer i:l1) System.out.print(i+" ");
+        System.out.println();
         System.out.println("Second list is : ");
         for(Integer i:l2) System.out.print(i+" ");
+        System.out.println();
         System.out.println("Resultant list is : ");
         for(Integer j:res) System.out.print(j+" ");
         System.out.println("END OF MAIN ....");

@@ -10,12 +10,15 @@ public class swappingClass {
     {
         if(list.size()<2) return ;
         int i=0;
+        System.out.println("Swappings :");
         while(i<list.size())
         {
             int a=list.get(i);            
             if(i+1<list.size())
             {
                 int b=list.get(i+1);
+                System.out.println(a+"<->"+b);
+                
                 list.set(i,b);
                 list.set(i+1,a);
             }
@@ -38,6 +41,8 @@ public class swappingClass {
 
         swappingClass obj=new swappingClass();
         obj.swapPairs(list);
+
+        System.out.println("Result : ");
 
         for(int a:list) System.out.print(a+" ");
 
