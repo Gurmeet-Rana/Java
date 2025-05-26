@@ -1,11 +1,9 @@
-/* Write  a  program  to  insert  a  string  into  another  string  (Without  using  any  predefined 
-method) at any given index */
 
 import java.util.Scanner;
 public class question1 {
     String insert(String s1,String s2,int index)
     {
-         
+        System.out.println("IN INSERT !!");
         StringBuffer str=new StringBuffer();
         int i=0;
         for(;i<s1.length() && i<index;i++)

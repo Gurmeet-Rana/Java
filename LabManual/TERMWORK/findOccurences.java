@@ -24,7 +24,7 @@ public class findOccurences {
         System.out.println("Enter the patterns to search : ");
         pat=sc.nextLine();
 
-        System.out.println("Realtion : "+findOccurences.findPat(str,pat));
+        System.out.println("Relation : "+findOccurences.findPat(str,pat));
 
         System.out.println("EXITING THEP PROGRAM....");
 

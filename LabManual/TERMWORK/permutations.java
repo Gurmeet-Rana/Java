@@ -1,40 +1,40 @@
-import java.util.Arrays;
-import java.util.Scanner;
-public class permutations
+import java.util.*;
+
+public class Permutations
 {
-    static int findFact(int n)
+    public static void printPermutations(StringBuffer str,int i)
     {
-        if(n<=2) return n;
-        return findFact(n-1)*n;
-    }
-
-    void solve(StringBuilder str,int i,StringBuilder arr[],int n)
-    {
-        if(i==n)
+        if(i>=str.length()) 
         {
-            arr.append(str);
+            System.out.print(str+" ");
+            return ;
         }
-        for(int j=i;j<n;j++)
-        {
-            char temp=str.charAt(j);
-            str.charAt(i)=temp;
 
+        for(int j=i;j<str.length();j++)
+        {
+            char temp=str.charAt(i);
+            str.setCharAt(i,str.charAt(j));
+            str.setCharAt(j, temp);
+            
+            printPermutations(str, i+1);
+
+            temp=str.charAt(i);
+            str.setCharAt(i,str.charAt(j));
+            str.setCharAt(j, temp);
+            
         }
+
     }
-    public static void main(String [] args)
+    public static void main(String []args)
     {
-        String str=new String();
         Scanner sc=new Scanner(System.in);
+        String org=new String();
         System.out.println("Enter the string : ");
-        str=sc.nextLine();
-        int number=permutations.findFact(str.length());
-        StringBuilder arr[]=new StringBuilder[number];
-        int n=str.length();
-        solve(str,0,arr,n);
-        for(String x:arr)
-        {
-            System.out.println(x);
-        }
-        System.out.println("EXITING THE PROGRAM......");
+        org=sc.nextLine();
+        StringBuffer orgBuffer=new StringBuffer(org);
+
+        Permutations.printPermutations(orgBuffer,0);
+
+        System.out.println("End of program---");
     }
-} 
+}
