@@ -26,7 +26,5 @@ public class Count
         System.out.println("Words count = "+wordCnt);
         System.out.println("Alphabet count = "+alphaCnt);
         System.out.println("Number count = "+numberCnt);
-
-
     }
 }
