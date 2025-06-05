@@ -1,54 +1,14 @@
 import java.util.*;
 
-
-class Thread1 extends Thread
-{
-    PC obj;
-    Thread1(PC obj)
-    {
-        this.obj=obj;
-    }
-    public void run()
-    {
-       try{
-          obj.producer();
-       }
-       catch(Exception e)
-       {
-        System.out.println(e.toString());
-       }
-    }
-}
-
-class Thread2 extends Thread
-{
-    PC obj;
-    Thread2(PC obj)
-    {
-        this.obj=obj;
-    }
-    public void run()
-    {
-       try{
-         obj.consumer();
-       } catch (Exception e) {
-        // TODO: handle exception
-        System.out.println(e.getMessage());
-       }
-    }
-}
-
- 
-
 public class PC {
     LinkedList<Integer> list=new LinkedList<Integer>();
     int capacity=2;
-    public void producer() throws InterruptedException
+    public void producer() throws Exception
     {
         int value=0;
         while(true)
         {
-            synchronized(this){
+            synchronized{
                 while(list.size()==capacity)
                 {
                     wait();
@@ -57,16 +17,15 @@ public class PC {
                 list.add(value++);
                 notify();
 
-                 }
                 Thread.sleep(500);
-           
+            }
         }
     }
-    public void consumer() throws InterruptedException
+    public void consumer()
     {
         while(true)
         {
-            synchronized(this){
+            synchronized{
                 while(list.size()==0)
                 {
                     wait();
@@ -74,22 +33,47 @@ public class PC {
                 System.out.println("Consumer is gonna consume : "+list.removeFirst());
                 notify();
 
-                 }
-
                 Thread.sleep(500);
-           
+            }
         }
     }
     
-    public static void main(String []args) throws Exception
+    public static void main(String []args)
     {
         PC obj=new PC();
         Thread1 t1=new Thread1(obj);
         Thread2 t2=new Thread2(obj);
-        
         t1.start();
         t2.start();
 
         System.out.println("PROGRAM KHTM---");
     }
 }
+
+class Thread1
+{
+    PC obj;
+    Thread1(PC obj)
+    {
+        this.obj=obj;
+    }
+    public void run()
+    {
+        obj.producer();
+    }
+}
+
+class Thread2
+{
+    PC obj;
+    Thread2(PC obj)
+    {
+        this.obj=obj;
+    }
+    public void run()
+    {
+        obj.consumer();
+    }
+}
+
+ 
