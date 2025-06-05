@@ -6,8 +6,6 @@ public class Write {
     {
         Scanner sc=new Scanner(System.in);
         String str=sc.nextLine();
-
-
         //BYTE STREAM 
         FileOutputStream fos=new FileOutputStream("temp.txt");
         byte b[]=str.getBytes();
