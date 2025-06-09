@@ -1,13 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
-
+import javax.swing.*;
 
 public class colorPanel extends JFrame
 {
     JPanel jp;
     JScrollBar r,g,b;
 
-    public class Inner implements AdjustmentListener
+    public class InnerClass implements AdjustmentListener
     {
         public void adjustmentValueChanged(AdjustmentEvent e)
         {
