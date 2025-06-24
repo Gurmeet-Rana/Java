@@ -10,7 +10,22 @@
         JScrollPane sp=new JScrollPane(t);
         add(sp);  */
 
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
 
 public class Components {
-    
+    Components()
+    {
+        ButtonGroup bg=new ButtonGroup();  // ONLY ONE RBUTTON IS SELECTED
+        JRadioButton r1=new JRadioButton("Male");
+        JRadioButton r2=new JRadioButton("Female");  // ItemListener , itemStateChanged 
+        bg.add(r1);
+        bg.add(r2);
+        add(r1);
+        add(r2);
+    }
+    public static void main(String []args)
+    {
+
+    }
 }
